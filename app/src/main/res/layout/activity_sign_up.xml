@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_signUp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CFE9EF"
+    android:orientation="vertical"
+    tools:context=".signUp">
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="46dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/lemon"
+        android:text="Register"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="צור משתמש חדש"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        />
+
+
+    <EditText
+        android:id="@+id/ed_name"
+        android:layout_width="337dp"
+        android:layout_height="49dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custem_et"
+        android:drawableRight="@drawable/ic_baseline_person_24"
+        android:hint="שם"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/ed_id"
+        android:layout_width="337dp"
+        android:layout_height="49dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custem_et"
+        android:hint="תעודת זהות"
+        android:textSize="20dp" />
+
+    <EditText
+        android:layout_gravity="center"
+        android:id="@+id/ed_email"
+        android:layout_width="337dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custem_et"
+        android:drawableRight="@drawable/ic_baseline_email_24"
+        android:hint="אי מייל"
+        android:textSize="20dp" />
+
+    <EditText
+        android:layout_gravity="center"
+        android:id="@+id/ed_password"
+        android:layout_width="337dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="30dp"
+        android:hint="סיסמא"
+        android:textSize="20dp"
+        android:drawableRight="@drawable/ic_baseline_lock_24"
+        android:background="@drawable/custem_et"/>
+
+    <EditText
+        android:layout_gravity="center"
+        android:id="@+id/ed_co_password"
+        android:layout_width="337dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="30dp"
+        android:hint="אשר סיסמא"
+        android:textSize="20dp"
+        android:drawableRight="@drawable/ic_baseline_lock_24"
+        android:background="@drawable/custem_et"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+
+        <RadioGroup
+            android:id="@+id/rg_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="50dp"
+            >
+
+         <RadioButton
+           android:id="@+id/rb_volnterW"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentLeft="true"
+           android:layoutDirection="rtl"
+           android:text="עובד מתנדב"
+           android:textStyle="bold"
+           android:textColor="#086E7D"
+           />
+
+         <RadioButton
+          android:id="@+id/rb_student"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layoutDirection="rtl"
+          android:layout_marginLeft="20dp"
+          android:text="תלמיד"
+          android:textStyle="bold"
+          android:textColor="#086E7D"
+          />
+          </RadioGroup>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="בחר סוג משתמש:"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_signUp"
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#65D4EE"
+        android:fontFamily="@font/lemon"
+        android:text="Sign up"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
+
+
+
+</LinearLayout>
