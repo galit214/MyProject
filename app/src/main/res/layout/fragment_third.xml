@@ -7,9 +7,7 @@
     android:background="#A3DA8D"
     android:orientation="vertical"
     tools:context=".ThirdFragment">
-
-/שם המקום יהיה ספינר*
-    בחפש מפה תופיע מפה ברדיוס הקרוב*
+בחפש מפה תופיע מפה ברדיוס הקרוב*
 
     <TextView
         android:layout_width="match_parent"
@@ -44,6 +42,13 @@
         android:textSize="30dp"
         />
 
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/google_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+
     <Button
         android:id="@+id/btn_send_confirm_addH"
         android:layout_width="150dp"
@@ -54,6 +59,8 @@
         android:fontFamily="@font/abraham_regular"
         android:text="הוסף"
         android:textSize="40dp" />
+
+
 
 
 </LinearLayout>
