@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/secondFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#A3DA8D"
+    tools:context=".SecondFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="הוספת שעת התנדבות"
+        android:background="@color/white"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/abraham_regular"
+        android:textAlignment="center"
+        android:textColor="#A3DA8D"
+        android:textSize="40dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/ed_date_addH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="תאריך"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/abraham_regular"
+        android:textDirection="rtl"/>
+
+    <EditText
+        android:id="@+id/ed_num_hours_addH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="מספר שעות"
+        android:fontFamily="@font/abraham_regular"
+        android:textDirection="rtl"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:id="@+id/ed_description_addH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="תיאור"
+        android:fontFamily="@font/abraham_regular"
+        android:textDirection="rtl"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/abraham_regular"
+            android:text="מקום התנדבות"
+            android:textSize="18dp"
+            android:layout_marginLeft="40dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_send_confirm_addH"
+        android:layout_width="171dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#146356"
+        android:fontFamily="@font/abraham_regular"
+        android:text="לאשר שעה"
+        android:textSize="25dp" />
+
+
+</LinearLayout>

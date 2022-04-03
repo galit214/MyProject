@@ -1,35 +1,26 @@
 package com.example.myproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class student_main extends AppCompatActivity {
-    Button btn_addMehoivaot;
-    DatabaseReference mehoivaotRef;
-    FirebaseDatabase firebaseDatabase;
+
+    BottomNavigationView bottomNavigationView;
+    NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_main);
-        firebaseDatabase = FirebaseDatabase.getInstance();
 
-
-        btn_addMehoivaot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mehoiavot m=new mehoiavot();
-                mehoivaotRef=firebaseDatabase.getReference("mehoiavots").push();
-                mehoivaotRef.setValue(m);
-
-
-            }
-        });
+        bottomNavigationView=findViewById(R.id.bottomNavigationView);
+        navController= Navigation.findNavController(student_main.this,R.id.fragment);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
     }
 }

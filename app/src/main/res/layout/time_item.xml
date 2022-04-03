@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/tv_date_gv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abraham_regular"
+        android:layout_marginLeft="150dp"
+        android:textSize="20dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_date_gv"
+        android:fontFamily="@font/abraham_regular"
+        android:layout_marginLeft="120dp"
+        android:textSize="20dp"
+        android:text="תאריך:" />
+
+    <TextView
+        android:id="@+id/tv_approved_gv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_date_gv"
+        android:layout_marginLeft="150dp"
+        android:fontFamily="@font/abraham_regular"
+        android:text=""
+        android:textSize="20dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_approved_gv"
+        android:fontFamily="@font/abraham_regular"
+        android:layout_below="@id/tv1"
+        android:layout_marginLeft="100dp"
+        android:textSize="20dp"
+        android:text="מצב אישור:" />
+
+
+
+
+
+</RelativeLayout>
+
+
+
+

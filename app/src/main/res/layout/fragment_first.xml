@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A3DA8D"
+    tools:context=".FirstFragment">
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_menu_24"
+        android:background="#A3DA8D"
+        android:layout_marginTop="40dp"/>
+
+
+    <TextView
+        android:layout_width="415dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        android:fontFamily="@font/abraham_regular"
+        android:text="שעות שעשית:"
+        android:textAlignment="center"
+        android:textColor="#A3DA8D"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+
+
+    <GridView
+        android:id="@+id/gv_allTime"
+        android:layout_width="match_parent"
+        android:layout_height="410dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_rectangle_design"
+        android:horizontalSpacing="6dp"
+        android:numColumns="1"
+        android:verticalSpacing="50dp"
+    />
+
+
+
+
+    </LinearLayout>

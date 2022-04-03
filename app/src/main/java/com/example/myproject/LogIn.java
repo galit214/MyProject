@@ -1,29 +1,28 @@
 package com.example.myproject;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.RelativeSizeSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 public class LogIn extends AppCompatActivity implements View.OnClickListener {
     FirebaseAuth firebaseAuth;
@@ -35,6 +34,10 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
     EditText et_email_dialog; //dialog buttons
     Button  btn_reset_dialog,btn_back_dialog;
     ProgressDialog progressDialog;
+    String message;
+    DatabaseReference user_ref;
+    ArrayList<User> users;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +55,13 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
 
         firebaseAuth=FirebaseAuth.getInstance();
+        user_ref= FirebaseDatabase.getInstance().getReference("Users");
+
 
 
     }
+
+
 
     @Override
     public void onClick(View view) {
@@ -96,8 +103,9 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                       if (task.isSuccessful()) {
-                          Toast.makeText(LogIn.this,
-                              "Successfully registered", Toast.LENGTH_SHORT).show();
+                          message="Successfully registered";
+                          mySnackBar(message);
+
                        }
                       else {
                          Toast.makeText(LogIn.this,
@@ -108,12 +116,17 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
                      }
                 });
             }
+            login(ed_password.getText().toString(),ed_email.getText().toString());
+
         }
         if(view==tv_goSignUp){
             Intent intent=new Intent(LogIn.this,signUp.class);
             startActivity(intent);
         }
     }
+
+
+
 
     public void createForgetrPassDialog(){
         d=new Dialog(this);
@@ -128,6 +141,8 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
 
         d.show();
+
+
 
 
     }
@@ -154,7 +169,22 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         snackbar.show();
     }
 
+    public void login(String password, String email){
 
+        firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Intent intent=new Intent(LogIn.this,student_main.class);
+                    startActivity(intent);
+                }
+                else{
+                    mySnackBar("your password or email not correct");
+                }
+
+            }
+        });
+    }
 
 
 }

@@ -1,10 +1,10 @@
 package com.example.myproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class splashScreen extends AppCompatActivity {
     Handler handler;
@@ -17,7 +17,7 @@ public class splashScreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(splashScreen.this, show_map.class);
+                Intent intent=new Intent(splashScreen.this, LogIn.class);
                 startActivity(intent);
                 finish();
             }

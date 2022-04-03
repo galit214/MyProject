@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/secondFragment"
+        android:title="הוסף שעות"
+        android:icon="@drawable/ic_more_time_24"
+        />
+    <item
+        android:id="@+id/firstFragment"
+        android:title="בית"
+        android:icon="@drawable/ic_home_24"
+
+        />
+    <item
+        android:id="@+id/thirdFragment"
+        android:title="הוסף מקום"
+        android:icon="@drawable/ic_add_location_alt_24"
+        />
+
+
+</menu>

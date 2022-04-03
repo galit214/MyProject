@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3C892"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_time_d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_Mtime_d"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="@font/abraham_regular"
+        android:text="מספר שעות:"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/tv_Mtime_d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="@font/abraham_regular"
+        android:textSize="18dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_date_d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_time_d"
+        android:layout_alignLeft="@id/tv_Mdate_d"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="35dp"
+        android:text="תאריך:"
+        android:fontFamily="@font/abraham_regular"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/tv_Mdate_d"
+        android:layout_below="@id/tv_Mtime_d"
+        android:layout_marginTop="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="@font/abraham_regular"
+        android:textSize="18dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_place_d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_date_d"
+        android:layout_alignLeft="@id/tv_Mplace_d"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/abraham_regular"
+        android:text="מקום ההתנדבות:"
+        android:textSize="18dp" />
+    <TextView
+        android:id="@+id/tv_Mplace_d"
+        android:layout_below="@id/tv_Mdate_d"
+        android:layout_marginTop="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="@font/abraham_regular"
+        android:textSize="18dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_dis_d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_Mdis_d"
+        android:layout_marginLeft="100dp"
+        android:layout_below="@id/tv_place_d"
+        android:layout_marginTop="35dp"
+        android:text="תיאור מחויבות:"
+        android:fontFamily="@font/abraham_regular"
+        android:textSize="18dp"/>
+    <TextView
+        android:id="@+id/tv_Mdis_d"
+        android:layout_below="@id/tv_Mplace_d"
+        android:layout_marginTop="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="@font/abraham_regular"
+        android:textSize="18dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_approved_d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_dis_d"
+        android:layout_alignLeft="@id/tv_Mapproved_d"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/abraham_regular"
+        android:text="מצב אישור:"
+        android:textSize="18dp" />
+    <TextView
+        android:id="@+id/tv_Mapproved_d"
+        android:layout_below="@id/tv_Mdis_d"
+        android:layout_marginTop="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="@font/abraham_regular"
+        android:textSize="18dp"
+        />
+
+
+
+
+
+</RelativeLayout>

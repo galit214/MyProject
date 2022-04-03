@@ -1,24 +1,20 @@
 package com.example.myproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,21 +25,27 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class signUp extends AppCompatActivity implements View.OnClickListener {
-//לא מצליח להתחבר לפייר בייס
     EditText et_name, et_email, et_password, et_co_password, et_id;
     ImageView img_back;
+    ImageButton im_see_p,im_see_cop;
     Button btn_signUp;
     RadioGroup rg_type;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference userRef;
     FirebaseAuth firebaseAuth;
     LinearLayout layOut_signUp;
-
+    RadioButton radioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+
         setContentView(R.layout.activity_sign_up);
+
+
         rg_type = findViewById(R.id.rg_type);
         et_id = findViewById(R.id.ed_id);
         et_name = findViewById(R.id.ed_name);
@@ -53,10 +55,18 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
         img_back = findViewById(R.id.img_back);
         btn_signUp = findViewById(R.id.btn_signUp);
         layOut_signUp = findViewById(R.id.layout_signUp);
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        firebaseAuth = FirebaseAuth.getInstance();
+        im_see_p=findViewById(R.id.Ib_see_p);
+        im_see_cop=findViewById(R.id.Ib_see_coP);
+
+
         btn_signUp.setOnClickListener(this);
         img_back.setOnClickListener(this);
+        im_see_p.setOnClickListener(this);
+        im_see_cop.setOnClickListener(this);
+
+        et_password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
+        et_co_password.setTransformationMethod(PasswordTransformationMethod.getInstance());
 
     }
 
@@ -66,10 +76,15 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
             Intent intent = new Intent(signUp.this, LogIn.class);
             startActivity(intent);
         }
+        if(view==im_see_p){
+            et_password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+        }
+
 
         if (view == btn_signUp) {
             int selectedId=rg_type.getCheckedRadioButtonId();
-            RadioButton radioButton=findViewById(selectedId);
+            radioButton =findViewById(selectedId);
+
             if (!checkInput(et_email.getText().toString(), et_password.getText().toString(),
                    et_name.getText().toString(), et_id.getText().toString(), et_co_password.getText().toString())) {
                 createNewUser();
@@ -79,6 +94,10 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
                 u.setUid(userRef.getKey());
                 userRef.setValue(u);
 
+            }
+            if(radioButton.getText().equals("תלמיד")){
+                Intent intent=new Intent(signUp.this,student_main.class);
+                startActivity(intent);
             }
         }
     }

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LogIn"
-    android:background="#CFE9EF"
+    android:background="#F3C892"
     android:orientation="vertical">
 
 
@@ -15,10 +15,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
-        android:fontFamily="@font/lemon"
-        android:text="Welcome Back"
+        android:fontFamily="@font/abraham_regular"
+        android:text="ברוך הבא"
         android:textColor="@color/white"
-        android:textSize="35dp"
+        android:textSize="40dp"
         />
 
     <TextView
@@ -27,7 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="היכנס לחשבון שלך"
-        android:textSize="25dp"
+        android:textSize="30dp"
+        android:fontFamily="@font/abraham_regular"
         android:textColor="@color/white"
         android:textStyle="bold"
         />
@@ -35,8 +36,10 @@
         android:id="@+id/tv_goSignUP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/abraham_regular"
         android:text="אם לא קיים חשבון הירשם"
-        android:textColor="#65D4EE"
+        android:textSize="18dp"
+        android:textColor="#146356"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
@@ -50,9 +53,10 @@
         android:layout_height="55dp"
         android:layout_marginTop="50dp"
         android:hint="אי מייל"
+        android:background="@drawable/custom_rectangle_design"
+        android:fontFamily="@font/comixno2clm_medium_webfont"
         android:textSize="20dp"
         android:drawableRight="@drawable/ic_baseline_email_24"
-        android:background="@drawable/custem_et"
         android:textStyle="bold"
 
         />
@@ -64,10 +68,11 @@
     android:layout_height="55dp"
     android:layout_marginTop="40dp"
     android:hint="סיסמא"
+        android:background="@drawable/custom_rectangle_design"
+     android:fontFamily="@font/comixno2clm_medium_webfont"
     android:textSize="20dp"
     android:drawableRight="@drawable/ic_baseline_lock_24"
-    android:background="@drawable/custem_et"
-        android:textStyle="bold"
+
         />
 
     <LinearLayout
@@ -81,11 +86,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
-            android:fontFamily="cursive"
+            android:fontFamily="@font/abraham_regular"
             android:textColor="@color/white"
             android:text="שכחת סיסמא?"
-            android:textSize="17dp"
-            android:textStyle="bold" />
+            android:textSize="22dp"
+             />
 
         <CheckBox
             android:id="@+id/cb_rme"
@@ -94,8 +99,9 @@
             android:text="זכור אותי"
             android:layout_marginLeft="50dp"
             android:textColor="@color/white"
-            android:textSize="17dp"
-            android:textStyle="bold" />
+            android:textSize="22dp"
+            android:fontFamily="@font/abraham_regular"
+             />
 
 
 
@@ -108,11 +114,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:backgroundTint="#65D4EE"
-        android:fontFamily="cursive"
+        android:backgroundTint="#A3DA8D"
+        android:fontFamily="@font/abraham_regular"
         android:text="היכנס"
-        android:textSize="30dp"
-        android:textStyle="bold" />
+        android:textSize="30dp" />
 
 
 </LinearLayout>

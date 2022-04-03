@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="mint">#B4F8C8</color>
     <color name="bright_yellow">#FAC12F</color>
+    <color name="pistuk">#A3DA8D</color>
+    <color name="teal_green">#146356</color>
+    <color name="soft_pink">#FFF1BD</color>
+    <color name="dust_pink">#F3C892</color>
 </resources>
