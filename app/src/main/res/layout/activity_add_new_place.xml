@@ -45,27 +45,14 @@
     android:fontFamily="@font/abraham_regular"
     android:hint="תיאור המקום"/>
 
-    <TextView
+    <EditText
+        android:id="@+id/newP_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="כתובת המקום"
+        android:hint="כתובת המקום"
         android:textColor="@color/white"
         android:fontFamily="@font/abraham_regular"
-        android:textSize="25dp"
-        android:layout_marginTop="15dp"/>
-    <EditText
-        android:id="@+id/newP_streetN"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="שם הרחוב"
-        android:fontFamily="@font/abraham_regular"/>
-    <EditText
-        android:id="@+id/newP_cityN"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="שם העיר או הישוב"
-        android:fontFamily="@font/abraham_regular"/>
-
+        />
 
 
     <LinearLayout
