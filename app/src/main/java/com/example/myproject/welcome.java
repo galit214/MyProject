@@ -1,21 +1,13 @@
 package com.example.myproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -25,10 +17,15 @@ public class welcome extends AppCompatActivity implements View.OnClickListener {
     FloatingActionButton fav_settings;
     LinearLayout welcome_layout;
     Button btn_logIn, btn_signUp;
-    String selectKindUser;
     int countClicks = 0;
     String adminId = "nkmAv73sv6Xsr38URuHwufgRYL93";
     String uid="";
+
+
+    // todo- (3)  שמירת מסד הנתונים חסרה
+
+    //todo- (4) check screen flow
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +69,5 @@ public class welcome extends AppCompatActivity implements View.OnClickListener {
         }
 
     }
-
 
 }

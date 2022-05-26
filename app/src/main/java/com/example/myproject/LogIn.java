@@ -59,6 +59,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
 
 
+
     }
 
 
@@ -97,26 +98,28 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         if(view==btn_logIn){
             String email=ed_email.getText().toString();
             String pass=ed_password.getText().toString();
-            if(!checkInput(email,pass)) {
-             firebaseAuth.createUserWithEmailAndPassword(
-                        email,pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            if(checkInput(email,pass)) {
+                firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                      if (task.isSuccessful()) {
-                          message="Successfully registered";
-                          mySnackBar(message);
+                        if(task.isSuccessful()){
+                            (Toast.makeText(getApplicationContext(), "login successful",
+                                    Toast.LENGTH_LONG)).show();
+                            Intent intent=new Intent(LogIn.this,student_main.class);
+                            startActivity(intent);
+                        }
 
-                       }
-                      else {
-                         Toast.makeText(LogIn.this,
-                         "Registration Error!",
-                          Toast.LENGTH_SHORT).show();
-                      }
+                        else{
+                            Toast.makeText(getApplicationContext(),
+                                    "Login failed!!",
+                                    Toast.LENGTH_LONG)
+                                    .show();
 
-                     }
+                        }
+                    }
                 });
             }
-            login(ed_password.getText().toString(),ed_email.getText().toString());
+
 
         }
         if(view==tv_goSignUp){
@@ -143,48 +146,30 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         d.show();
 
 
-
-
     }
 
     public boolean checkInput(String email, String pass){
-        boolean error=false;
+        boolean noerror=true;
         String message="Error:\n\t";
-        if(email.trim().length()==0){
-            error=true;
+        if(email.length()==0){
+            noerror=false;
             message+= "Enter your registed email.\t";
         }
-        if(pass.trim().length()==0){
-            error=true;
+        if(pass.length()==0){
+            noerror=false;
             message+= "Missing required password.\t";
         }
-        if(error){
+        if(!noerror){
             mySnackBar(message);
         }
-        return error;
+        return noerror;
 
     }
+
+
+
     public void mySnackBar(String message){
         Snackbar snackbar=Snackbar.make(layout_login,message,Snackbar.LENGTH_LONG);
         snackbar.show();
     }
-
-    public void login(String password, String email){
-
-        firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Intent intent=new Intent(LogIn.this,student_main.class);
-                    startActivity(intent);
-                }
-                else{
-                    mySnackBar("your password or email not correct");
-                }
-
-            }
-        });
-    }
-
-
 }

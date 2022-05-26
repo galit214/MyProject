@@ -28,6 +28,7 @@
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/drawable/ic_luncher_foreground.xml" value="0.1076388888888889" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/font/my_font.xml" value="0.1673611111111111" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_add_hours.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_add_new_place.xml" value="0.23114035087719298" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_add_place.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
@@ -39,11 +40,13 @@
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_student_main.xml" value="0.2" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_student_main2.xml" value="0.1953125" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_welcome.xml" value="0.190625" />
+        <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_worker_main.xml" value="0.23114035087719298" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/choose_user_dialog.xml" value="0.190625" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/fragment_first.xml" value="0.205859375" />
-        <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/fragment_second.xml" value="0.4" />
+        <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/fragment_second.xml" value="0.264" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/fragment_third.xml" value="0.205859375" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/main_fragment.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/new_place_dialog.xml" value="0.23114035087719298" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/reset_password_dialog.xml" value="0.16" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/splash_screen_activity.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/time_item.xml" value="0.16" />
