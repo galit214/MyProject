@@ -13,13 +13,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyProject">
         <activity
-            android:name=".Opps2"
+            android:name=".add_new_place"
             android:exported="false" />
         <activity
-            android:name=".student_main"
-            android:exported="true" />
+            android:name=".WorkerMain"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBBNvwMtb4pYA4BLJSHRF8bd0AxmTGajsU" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.API_KEY"
+            android:value="AIzaSyCONZoLLvJ4OB0LXPCXfqFCbLmnUvVKe4A" />
+
         <activity
-            android:name=".show_map"
+            android:name=".student_main"
             android:exported="true" />
         <activity
             android:name=".LogIn"
@@ -49,9 +60,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        <meta-data
-            android:name="com.google.android.API_KEY"
-            android:value="AIzaSyD4va9rhOcTjmZYZLZ2EaY6yK3mUFhFU-w" />
     </application>
 
 </manifest>
