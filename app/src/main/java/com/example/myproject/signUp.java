@@ -93,9 +93,14 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
                 u.setUid(userRef.getKey());
                 userRef.setValue(u);
 
+
             }
             if(radioButton.getText().equals("תלמיד")){
                 Intent intent=new Intent(signUp.this,student_main.class);
+                startActivity(intent);
+            }
+            if(radioButton.getText().equals("עובד מתנדב")){
+                Intent intent =new Intent(signUp.this,WorkerMain.class);
                 startActivity(intent);
             }
         }

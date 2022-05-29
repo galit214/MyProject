@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#F3C892"
     android:orientation="vertical"
+    android:id="@+id/layout_add_new_place"
     tools:context=".add_new_place"
     >
 
@@ -19,6 +20,7 @@
     android:textAlignment="center"
     android:textColor="@color/white"
     android:textSize="30dp"
+
     />
 
     <TextView
@@ -31,19 +33,23 @@
     android:textSize="20dp"/>
 
     <EditText
-    android:id="@+id/newP_name"
-    android:layout_marginTop="20dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="שם המקום:"
-    android:fontFamily="@font/abraham_regular"/>
+        android:id="@+id/newP_name"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="שם המקום:"
+        android:fontFamily="@font/abraham_regular"
+        android:layoutDirection="rtl"
+        android:textDirection="rtl"/>
 
     <EditText
-    android:id="@+id/newP_description"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:fontFamily="@font/abraham_regular"
-    android:hint="תיאור המקום"/>
+        android:id="@+id/newP_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abraham_regular"
+        android:hint="תיאור המקום"
+        android:layoutDirection="rtl"
+        android:textDirection="rtl"/>
 
     <EditText
         android:id="@+id/newP_address"
@@ -52,6 +58,8 @@
         android:hint="כתובת המקום"
         android:textColor="@color/white"
         android:fontFamily="@font/abraham_regular"
+        android:layoutDirection="rtl"
+        android:textDirection="rtl"
         />
 
 

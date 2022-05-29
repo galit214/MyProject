@@ -10,17 +10,18 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class add_new_place extends AppCompatActivity implements View.OnClickListener {
     EditText ed_name,ed_description,ed_address;
-    ImageView im_Placeimage;
+    ImageView im_Place;
     Button btn_savePlace;
     DatabaseReference place_ref;
-    FirebaseAuth firebaseAuth;
+    FirebaseDatabase firebaseDatabase;
     int SELECT_PICTURE=200;
+    Uri imageUri;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +30,13 @@ public class add_new_place extends AppCompatActivity implements View.OnClickList
         ed_name=findViewById(R.id.newP_name);
         ed_description=findViewById(R.id.newP_description);
         ed_address=findViewById(R.id.newP_address);
-        im_Placeimage=findViewById(R.id.newP_image);
+        im_Place =findViewById(R.id.newP_image);
         btn_savePlace=findViewById(R.id.newP_saveButton);
 
-        firebaseAuth=FirebaseAuth.getInstance();
+        firebaseDatabase=FirebaseDatabase.getInstance();
         place_ref= FirebaseDatabase.getInstance().getReference("Places");
 
-        im_Placeimage.setOnClickListener(this);
+        im_Place.setOnClickListener(this);
         btn_savePlace.setOnClickListener(this);
 
 
@@ -43,15 +44,26 @@ public class add_new_place extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        if(v==im_Placeimage){
+        if(v== im_Place){
             imageChooser();
         }
         if(v==btn_savePlace) {
-            if(chekInput())
+            String name=ed_name.getText().toString();
+            String description=ed_description.getText().toString();
+            String address=ed_address.getText().toString();
+            if(chekInput(name,description,address)){
+                Place p=new Place(name,description,null,address,null);
+                place_ref= firebaseDatabase.getReference("places").push();
+                p.setPid(place_ref.getKey());
+                place_ref.setValue(p);
+
+            }
 
         }
 
     }
+
+
 
     void imageChooser(){
         Intent i=new Intent();
@@ -68,7 +80,8 @@ public class add_new_place extends AppCompatActivity implements View.OnClickList
             if(requestCode==SELECT_PICTURE){
                 Uri selectedImageUri=data.getData();
                 if(null !=selectedImageUri){
-                    im_Placeimage.setImageURI(selectedImageUri);
+                    im_Place.setImageURI(selectedImageUri);
+                    imageUri=selectedImageUri;
                 }
             }
         }
@@ -76,20 +89,17 @@ public class add_new_place extends AppCompatActivity implements View.OnClickList
 
     public boolean chekInput(String name,String description,String address){
         boolean noEror=true;
-        String message="Error:\n\t";
 
         if(name.length()==0){
             noEror=false;
-            message="Mising name of place";
         }
         if(description.length()==0){
             noEror=false;
-            message="Mising description of place";
         }
         if (address.length()==0){
             noEror=false;
-            message="Mising address of place";
         }
         return noEror;
     }
+
 }
