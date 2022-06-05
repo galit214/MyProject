@@ -6,15 +6,17 @@ public class User {
     private String Password;
     private String Type;
     private String uid;
+    private String imageUrl;
 
     public User(){}
 
-    public User(String name, String email, String password,String Type , String uid) {
+    public User(String name, String email, String password,String Type , String uid, String imageUrl) {
         this.Type=Type;
         this.Name = name;
         this.Email = email;
         this.Password = password;
         this.uid=uid;
+        this.imageUrl=imageUrl;
     }
 
     public String getType() {
@@ -57,4 +59,13 @@ public class User {
     public void setUid(String uid) {
         this.uid = uid;
     }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 }
+

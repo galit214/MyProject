@@ -99,4 +99,13 @@
     android:fontFamily="@font/abraham_regular"
     android:textSize="30dp"/>
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_marginTop="200dp"
+        />
+
+
 </LinearLayout>

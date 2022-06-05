@@ -1,21 +1,19 @@
 package com.example.myproject;
 
-import android.media.Image;
-
 public class Place {
     public String name;
     public String description;
-    public Image image;
+    public String imageUrl;
     public String address;
     public String pid;
 
 
     public Place(){}
 
-    public Place(String name, String description, Image image, String addres, String pid) {
+    public Place(String name, String description, String placeImage, String addres, String pid) {
         this.name = name;
         this.description = description;
-        this.image = image;
+        this.imageUrl =placeImage;
         this.address = addres;
         this.pid = pid;
     }
@@ -36,13 +34,9 @@ public class Place {
         this.description = description;
     }
 
-    public Image getImage() {
-        return image;
-    }
+    public String getImageUrl() {return imageUrl;}
 
-    public void setImage(Image image) {
-        this.image = image;
-    }
+    public void setImageUrl(String imageUrl) {this.imageUrl = imageUrl;}
 
     public String getAddress() {
         return address;

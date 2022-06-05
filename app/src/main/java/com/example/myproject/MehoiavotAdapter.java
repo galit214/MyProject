@@ -28,7 +28,7 @@ public class MehoiavotAdapter extends ArrayAdapter<Mehoiavot> {
         Mehoiavot mehoiavot=getItem(position);
         TextView dateTV=listitemView.findViewById(R.id.tv_date_gv);
         TextView aprovedTV=listitemView.findViewById(R.id.tv_approved_gv);
-        dateTV.setText(mehoiavot.getDate());
+        dateTV.setText((CharSequence) mehoiavot.getDate());
         aprovedTV.setText(mehoiavot.getApproved().toString());
         return listitemView;
     }

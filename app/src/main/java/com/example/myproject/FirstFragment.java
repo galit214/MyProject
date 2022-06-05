@@ -26,7 +26,7 @@ public class FirstFragment extends Fragment {
         allTimeGv = view.findViewById(R.id.gv_allTime);
         mehoiavotArrayList = new ArrayList<Mehoiavot>();
         mehoiavotArrayList.add(new Mehoiavot(2.5, "something", "null",
-                "2/27/2000", false));
+                "2;27;2000", false));
         mehoiavotArrayList.add(new Mehoiavot(3, "something", "null",
                 "2/27/2000", true));
         mehoiavotArrayList.add(new Mehoiavot(2.5, "something", "null",

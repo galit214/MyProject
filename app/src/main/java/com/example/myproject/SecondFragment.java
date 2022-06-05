@@ -75,7 +75,10 @@ public class SecondFragment extends Fragment {
         btn_aproove_h.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkInput(ed_date.getText().toString(), ed_hours.getText().toString(), ed_description.getText().toString());
+                if(!checkInput( date,ed_hours.getText().toString(),ed_description.getText().toString())){
+
+                }
+
             }
         });
         return view;
@@ -84,10 +87,10 @@ public class SecondFragment extends Fragment {
 
 
 
-    public boolean checkInput(String date, String hours,String description){
+    public boolean checkInput(String date, String hours, String description){
         boolean error=false;
         String message = "Error:\n\t";
-        if(date.trim().length()==0){
+        if(date!=null){
             error=true;
             message="enter date.\t";
         }

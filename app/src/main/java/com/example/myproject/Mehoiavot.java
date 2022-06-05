@@ -1,12 +1,12 @@
 package com.example.myproject;
 
 public class Mehoiavot {
-    public Object getHours;
     private double hours;
     private Boolean approved;
     private String date;
     private String description;
     private String pid;
+
 
     public Mehoiavot(){
         //4 fire base

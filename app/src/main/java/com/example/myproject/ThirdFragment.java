@@ -28,6 +28,8 @@ import com.google.android.gms.tasks.Task;
 public class ThirdFragment extends Fragment implements OnMapReadyCallback {
     SupportMapFragment supportMapFragment;
     FusedLocationProviderClient client;
+    Location currentLocation;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -70,6 +72,7 @@ public class ThirdFragment extends Fragment implements OnMapReadyCallback {
             @Override
             public void onSuccess(Location location) {
                 if (location != null) {
+                    currentLocation=location;
                     supportMapFragment.getMapAsync(new OnMapReadyCallback() {
                         @Override
                         public void onMapReady(@NonNull GoogleMap googleMap) {
@@ -78,7 +81,8 @@ public class ThirdFragment extends Fragment implements OnMapReadyCallback {
                             MarkerOptions options = new MarkerOptions().position(latLng)
                                     .title("i am here");
 
-                            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+                            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
+
 
                             googleMap.addMarker(options);
 
@@ -105,6 +109,7 @@ public class ThirdFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(@NonNull GoogleMap googleMap) {
 
     }
+
 
 
 
