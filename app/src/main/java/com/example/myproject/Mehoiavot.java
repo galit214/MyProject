@@ -6,18 +6,20 @@ public class Mehoiavot {
     private String date;
     private String description;
     private String pid;
+    private String uid;
 
 
     public Mehoiavot(){
         //4 fire base
     }
 
-    public Mehoiavot(double hours, String description, String pid,String date,boolean approved) {
+    public Mehoiavot(double hours, String description, String pid,String date,boolean approved,String uid) {
         this.hours = hours;
         this.description = description;
         this.pid = pid;
         this.date=date;
-        this.approved=false;
+        this.approved=approved;
+        this.uid=uid;
     }
 
     public Boolean getApproved() {
@@ -58,5 +60,13 @@ public class Mehoiavot {
 
     public void setPid(String pid) {
         this.pid = pid;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }

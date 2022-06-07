@@ -14,6 +14,10 @@ import android.widget.Spinner;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -28,6 +32,10 @@ public class SecondFragment extends Fragment {
     String date;
     Button btn_aproove_h;
     private static final String LOG_TAG = "LogActivity";
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference mehoivaotRef;
+    FirebaseAuth firebaseAuth;
+
 
 
     public SecondFragment(){
@@ -40,6 +48,10 @@ public class SecondFragment extends Fragment {
         ed_hours = view.findViewById(R.id.ed_num_hours_addH);
         ed_description = view.findViewById(R.id.ed_description_addH);
         btn_aproove_h = view.findViewById(R.id.btn_send_confirm_addH);
+        firebaseDatabase=FirebaseDatabase.getInstance();
+        mehoivaotRef=firebaseDatabase.getReference("Mehoiavot").push();
+
+
 
         //current date
         calendar = Calendar.getInstance();
@@ -75,8 +87,13 @@ public class SecondFragment extends Fragment {
         btn_aproove_h.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!checkInput( date,ed_hours.getText().toString(),ed_description.getText().toString())){
-
+                if(!checkInput(ed_date.getText().toString(),ed_hours.getText().toString(),ed_description.getText().toString())){
+                    FirebaseUser currentUser=FirebaseAuth.getInstance().getCurrentUser() ;
+                    String userId=currentUser.getUid();
+                    double hours=Double.parseDouble(ed_hours.getText().toString());
+                    Mehoiavot m=new Mehoiavot(hours,ed_description.getText().toString(),
+                              "",ed_date.getText().toString(),false,userId);
+                    mehoivaotRef.setValue(m);
                 }
 
             }
@@ -90,7 +107,7 @@ public class SecondFragment extends Fragment {
     public boolean checkInput(String date, String hours, String description){
         boolean error=false;
         String message = "Error:\n\t";
-        if(date!=null){
+        if(date==null){
             error=true;
             message="enter date.\t";
         }

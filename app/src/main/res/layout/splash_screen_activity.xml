@@ -26,15 +26,15 @@
         android:layout_height="137dp"
         android:layout_marginStart="167dp"
         android:layout_marginEnd="187dp"
-        android:fontFamily="@font/miriwin_webfont"
+        android:fontFamily="@font/abraham_regular"
         android:text="  ברוך הבא לאפליקציית
         מחויבות אישית"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.195" />
+        app:layout_constraintVertical_bias="0.176" />
 </androidx.constraintlayout.widget.ConstraintLayout>

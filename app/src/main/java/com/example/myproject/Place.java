@@ -6,6 +6,7 @@ public class Place {
     public String imageUrl;
     public String address;
     public String pid;
+    //todo add three attributes( phone,token)
 
 
     public Place(){}

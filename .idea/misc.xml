@@ -14,6 +14,7 @@
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/drawable/custom_rectangle_design.xml" value="0.21544401544401545" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/drawable/et_nav_bottom.xml" value="0.1076388888888889" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/drawable/ic_add_hours_foreground.xml" value="0.19305555555555556" />
+        <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/drawable/ic_add_location_alt_24.xml" value="0.1" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/drawable/ic_add_place_foreground.xml" value="0.19305555555555556" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/drawable/ic_add_time_foreground.xml" value="0.19305555555555556" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.19305555555555556" />
@@ -26,10 +27,12 @@
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/drawable/ic_home_foreground.xml" value="0.19305555555555556" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.19305555555555556" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/drawable/ic_luncher_foreground.xml" value="0.1076388888888889" />
+        <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/drawable/ic_more_time_24.xml" value="0.1" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/font/my_font.xml" value="0.1673611111111111" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_add_hours.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_add_new_place.xml" value="0.23114035087719298" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_add_place.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_list_view_mehoivot.xml" value="0.23114035087719298" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_register.xml" value="0.19662921348314608" />
@@ -42,7 +45,7 @@
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_welcome.xml" value="0.190625" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/activity_worker_main.xml" value="0.23114035087719298" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/choose_user_dialog.xml" value="0.190625" />
-        <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/fragment_first.xml" value="0.205859375" />
+        <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/fragment_first.xml" value="0.2" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/fragment_second.xml" value="0.264" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/fragment_third.xml" value="0.205859375" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/layout/main_fragment.xml" value="0.24947916666666667" />
@@ -59,6 +62,7 @@
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/mipmap-anydpi-v26/ic_find_place.xml" value="0.1076388888888889" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/mipmap-anydpi-v26/ic_home.xml" value="0.1076388888888889" />
         <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.12109375" />
+        <entry key="..\:/Users/galit/AndroidStudioProjects/MyProject/app/src/main/res/mipmap-anydpi-v26/ic_luncher.xml" value="0.2375" />
         <entry key="..\:/Users/galit/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.25416666666666665" />
       </map>
     </option>

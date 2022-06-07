@@ -54,7 +54,7 @@
         android:layout_marginTop="50dp"
         android:hint="אי מייל"
         android:background="@drawable/custom_rectangle_design"
-        android:fontFamily="@font/comixno2clm_medium_webfont"
+        android:fontFamily="@font/abraham_regular"
         android:textSize="20dp"
         android:drawableRight="@drawable/ic_baseline_email_24"
         android:textStyle="bold"
@@ -69,7 +69,7 @@
     android:layout_marginTop="40dp"
     android:hint="סיסמא"
         android:background="@drawable/custom_rectangle_design"
-     android:fontFamily="@font/comixno2clm_medium_webfont"
+     android:fontFamily="@font/abraham_regular"
     android:textSize="20dp"
     android:drawableRight="@drawable/ic_baseline_lock_24"
 

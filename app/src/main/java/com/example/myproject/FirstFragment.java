@@ -26,13 +26,11 @@ public class FirstFragment extends Fragment {
         allTimeGv = view.findViewById(R.id.gv_allTime);
         mehoiavotArrayList = new ArrayList<Mehoiavot>();
         mehoiavotArrayList.add(new Mehoiavot(2.5, "something", "null",
-                "2;27;2000", false));
+                "2;27;2000", false,null));
         mehoiavotArrayList.add(new Mehoiavot(3, "something", "null",
-                "2/27/2000", true));
-        mehoiavotArrayList.add(new Mehoiavot(2.5, "something", "null",
-                "2/27/2000", false));
-        mehoiavotArrayList.add(new Mehoiavot(4, "something", "null",
-                "2/27/2000", false));
+                "2/27/2000", true,null));
+        mehoiavotArrayList.add(new Mehoiavot(4,"ddd","","2/27/2000",true,""));
+        mehoiavotArrayList.add(new Mehoiavot(1.5,"ss","","3 /27/2000",true,""));
 
         MehoiavotAdapter adapter = new MehoiavotAdapter(getActivity(), mehoiavotArrayList);
         allTimeGv.setAdapter(adapter);

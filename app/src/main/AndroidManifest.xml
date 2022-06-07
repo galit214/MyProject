@@ -40,12 +40,6 @@
             android:name=".signUp"
             android:exported="true" />
         <activity
-            android:name=".welcome"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
-        <activity
             android:name=".splashScreen"
             android:exported="true">
             <intent-filter>
@@ -58,9 +52,7 @@
         <meta-data
             android:name="android.max_aspect"
             android:value="2.1" />
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+
 
     </application>
 

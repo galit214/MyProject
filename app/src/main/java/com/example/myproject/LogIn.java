@@ -25,8 +25,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LogIn extends AppCompatActivity implements View.OnClickListener {
     FirebaseAuth firebaseAuth;
@@ -59,7 +61,8 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         firebaseAuth = FirebaseAuth.getInstance();
         user_ref = FirebaseDatabase.getInstance().getReference("Users");
         user=FirebaseAuth.getInstance().getCurrentUser();
-
+        DatabaseReference user1Ref = user_ref.child("type");
+        userType=user1Ref.toString();
 
 
 
@@ -111,23 +114,8 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
                         if (task.isSuccessful()) {
                             (Toast.makeText(getApplicationContext(), "login successful",
                                     Toast.LENGTH_LONG)).show();
-                            user_ref.child(user.getUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                                    if(task.isSuccessful()){
-                                        if(task.getResult().exists()){
-                                            Toast.makeText(LogIn.this,"found data",Toast.LENGTH_SHORT);
-                                            DataSnapshot dataSnapshot=task.getResult();
-                                            userType=String.valueOf(dataSnapshot.child("type").getValue());
-                                        }else{
-                                            Toast.makeText(LogIn.this,"no user exist",Toast.LENGTH_SHORT);
-                                        }
-                                    }else{
-                                        Toast.makeText(LogIn.this,"task failed",Toast.LENGTH_SHORT);
-                                    }
-                                }
-                            });
 
+                            getData();
                             if(userType.equals("תלמיד")){
                                 Intent intent=new Intent(LogIn.this,student_main.class);
                                 startActivity(intent);
@@ -148,20 +136,24 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    /*public void getData() {
-        user_ref.child("Users").child(user.getUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+    public void getData() {
+
+        user_ref.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+
+                   userType =snapshot.child("type").getValue().toString();
 
                 }
-                else {
-                    Log.d("firebase", String.valueOf(task.getResult().getValue()));
-                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
-    }*/
+    }
 
     @Override
     public void onClick(View view) {
