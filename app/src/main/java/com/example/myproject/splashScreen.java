@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.FirebaseDatabase;
@@ -22,12 +23,15 @@ public class splashScreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(splashScreen.this, add_new_place.class);
+                Log.d("token", "the token device: "+Data.token);
+
+                Intent intent=new Intent(splashScreen.this, NotifyScreen.class);
                 startActivity(intent);
                 finish();
             }
         },1000);
 
+        Data.collectTokenDevice();
     }
 
     private void addPlaces(){

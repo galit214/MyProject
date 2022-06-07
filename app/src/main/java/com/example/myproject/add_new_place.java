@@ -34,7 +34,7 @@ public class add_new_place extends AppCompatActivity implements View.OnClickList
         btn_savePlace=findViewById(R.id.newP_saveButton);
 
         firebaseDatabase=FirebaseDatabase.getInstance();
-        place_ref= FirebaseDatabase.getInstance().getReference("Places");
+        place_ref= FirebaseDatabase.getInstance().getReference("Places/");
 
         im_Place.setOnClickListener(this);
         btn_savePlace.setOnClickListener(this);
