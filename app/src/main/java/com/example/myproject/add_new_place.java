@@ -70,7 +70,7 @@ public class add_new_place extends AppCompatActivity implements View.OnClickList
         progressBar=findViewById(R.id.progress_bar);
 
         firebaseDatabase=FirebaseDatabase.getInstance();
-        place_ref= FirebaseDatabase.getInstance().getReference("Places");
+        place_ref=firebaseDatabase.getReference("Place").push();
         storageRef= FirebaseStorage.getInstance().getReference("images");
 
         im_Place.setOnClickListener(this);
@@ -104,14 +104,11 @@ public class add_new_place extends AppCompatActivity implements View.OnClickList
             openFileChooser();
         }
         if(v==btn_savePlace) {
-            uploadFile();
             String name=ed_name.getText().toString();
             String description=ed_description.getText().toString();
             String address=ed_address.getText().toString();
             if(chekInput(name,description,address)){
                 Place p=new Place(name,description,null,address,null);
-                place_ref= firebaseDatabase.getReference("places").push();
-                p.setPid(place_ref.getKey());
                 uploadFile();
                 p.setImageUrl(uri_image.toString());
                 place_ref.setValue(p);
