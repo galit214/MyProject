@@ -61,6 +61,17 @@
         android:layoutDirection="rtl"
         android:textDirection="rtl"
         />
+    <EditText
+        android:id="@+id/newP_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="מספר טלפון של האחראי"
+        android:textColor="@color/white"
+        android:fontFamily="@font/abraham_regular"
+        android:layoutDirection="rtl"
+        android:textDirection="rtl"
+        />
+
 
 
     <LinearLayout

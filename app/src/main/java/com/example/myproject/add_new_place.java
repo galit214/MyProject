@@ -10,6 +10,7 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -33,7 +35,7 @@ import com.squareup.picasso.Picasso;
 
 public class add_new_place extends AppCompatActivity implements View.OnClickListener {
     private static final int PICK_IMAGE_REQUEST=1;
-    EditText ed_name,ed_description,ed_address;
+    EditText ed_name,ed_description,ed_address,ed_phone;
     ImageView im_Place;
     Button btn_savePlace;
     DatabaseReference place_ref;
@@ -43,6 +45,7 @@ public class add_new_place extends AppCompatActivity implements View.OnClickList
     Uri uri_image;
     ActivityResultLauncher<String> result_content;
     ProgressBar progressBar;
+    LinearLayout layout_add_new_place;
 
     int SELECT_PICTURE=200;
 
@@ -51,6 +54,23 @@ public class add_new_place extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_place);
+
+
+        ed_name=findViewById(R.id.newP_name);
+        ed_description=findViewById(R.id.newP_description);
+        ed_address=findViewById(R.id.newP_address);
+        ed_phone=findViewById(R.id.newP_phone);
+        im_Place =findViewById(R.id.newP_image);
+        btn_savePlace=findViewById(R.id.newP_saveButton);
+        progressBar=findViewById(R.id.progress_bar);
+        layout_add_new_place=findViewById(R.id.layout_add_new_place);
+
+        firebaseDatabase=FirebaseDatabase.getInstance();
+        place_ref=firebaseDatabase.getReference("Place").push();
+        storageRef= FirebaseStorage.getInstance().getReference("images");
+
+        im_Place.setOnClickListener(this);
+        btn_savePlace.setOnClickListener(this);
 
         result_content= registerForActivityResult(new ActivityResultContracts.GetContent(),
                 new ActivityResultCallback<Uri>() {
@@ -61,21 +81,6 @@ public class add_new_place extends AppCompatActivity implements View.OnClickList
                         Picasso.get().load(uri_image).into(im_Place);
                     }
                 });
-
-        ed_name=findViewById(R.id.newP_name);
-        ed_description=findViewById(R.id.newP_description);
-        ed_address=findViewById(R.id.newP_address);
-        im_Place =findViewById(R.id.newP_image);
-        btn_savePlace=findViewById(R.id.newP_saveButton);
-        progressBar=findViewById(R.id.progress_bar);
-
-        firebaseDatabase=FirebaseDatabase.getInstance();
-        place_ref=firebaseDatabase.getReference("Place").push();
-        storageRef= FirebaseStorage.getInstance().getReference("images");
-
-        im_Place.setOnClickListener(this);
-        btn_savePlace.setOnClickListener(this);
-
 
 
     }
@@ -107,8 +112,9 @@ public class add_new_place extends AppCompatActivity implements View.OnClickList
             String name=ed_name.getText().toString();
             String description=ed_description.getText().toString();
             String address=ed_address.getText().toString();
-            if(chekInput(name,description,address)){
-                Place p=new Place(name,description,null,address,null);
+            String phone=ed_phone.getText().toString();
+            if(chekInput(name,description,address,phone)){
+                Place p=new Place(name,description,null,address,null,phone,null);
                 uploadFile();
                 p.setImageUrl(uri_image.toString());
                 place_ref.setValue(p);
@@ -182,19 +188,39 @@ public class add_new_place extends AppCompatActivity implements View.OnClickList
 
 
 
-    public boolean chekInput(String name,String description,String address){
+    public boolean chekInput(String name,String description,String address,String phone){
         boolean noEror=true;
+        String message="Error:\n\t";
 
         if(name.length()==0){
             noEror=false;
+            message="Enter place name.\t";
         }
         if(description.length()==0){
             noEror=false;
+            message="Enter place description.\t";
+
         }
         if (address.length()==0){
             noEror=false;
+            message="Enter place address.\t";
+
+        }
+        if(phone.length()==0){
+            noEror=false;
+            message="Enter menager phone number.\t";
+
+        }
+        if(!noEror){
+            mySnakeBar(message);
+
         }
         return noEror;
+    }
+
+    public void mySnakeBar(String message) {
+        Snackbar snackbar = Snackbar.make(layout_add_new_place, message, Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
 
 }

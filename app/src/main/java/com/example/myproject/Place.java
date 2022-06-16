@@ -6,17 +6,22 @@ public class Place {
     public String imageUrl;
     public String address;
     public String pid;
+    public String phone;
+    public String token;
+
     //todo add three attributes( phone,token)
 
 
     public Place(){}
 
-    public Place(String name, String description, String placeImage, String addres, String pid) {
+    public Place(String name, String description, String placeImage, String addres, String pid, String phone,String token) {
         this.name = name;
         this.description = description;
         this.imageUrl =placeImage;
         this.address = addres;
         this.pid = pid;
+        this.phone=phone;
+        this.token=token;
     }
 
     public String getName() {
@@ -53,5 +58,21 @@ public class Place {
 
     public void setPid(String pid) {
         this.pid = pid;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }
